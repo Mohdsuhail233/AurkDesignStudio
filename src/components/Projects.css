@@ -1,0 +1,208 @@
+/* Portfolio Projects (Homepage) */
+.home-projects {
+    background-color: #EDEDED; /* Matches the screenshot and previous background choice */
+    color: #111;
+    padding: 100px 5%;
+    font-family: var(--font-sans);
+}
+
+/* Split Header Layout */
+.projects-header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 60px;
+    gap: 40px;
+}
+
+.projects-header-left {
+    max-width: 600px;
+}
+
+.projects-header-right {
+    max-width: 400px;
+    text-align: right;
+}
+
+.home-projects .portfolio-title {
+    font-size: clamp(2rem, 5vw, 3.8rem);
+    text-align: left;
+    color: #111;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.home-projects .portfolio-subtitle {
+    font-size: 0.95rem;
+    opacity: 0.7;
+    margin: 0;
+    text-transform: none;
+}
+
+.projects-header-right p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    opacity: 0.7;
+    margin: 0;
+}
+
+/* Animations */
+.home-projects .portfolio-title,
+.home-projects .portfolio-subtitle,
+.projects-header-right p {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 1.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+.projects-header-wrapper.is-visible .portfolio-title,
+.projects-header-wrapper.is-visible .portfolio-subtitle,
+.projects-header-wrapper.is-visible .projects-header-right p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.projects-header-wrapper.is-visible .portfolio-subtitle {
+    transition-delay: 0.1s;
+}
+
+.projects-header-wrapper.is-visible .projects-header-right p {
+    transition-delay: 0.2s;
+}
+
+/* Project Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px; /* Increased gap for better breathing room */
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.2s cubic-bezier(0.2, 1, 0.2, 1), 
+                transform 1.2s cubic-bezier(0.2, 1, 0.2, 1);
+}
+
+.project-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-image-wrapper {
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 1 / 1.1; /* Slightly less tall than before */
+    border-radius: 40px; /* Slightly refined corners for the new size */
+    background-color: #e0e0e0;
+}
+
+.project-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.5s cubic-bezier(0.2, 1, 0.2, 1);
+}
+
+.project-card:hover .project-image-wrapper img {
+    transform: scale(1.05);
+}
+
+.project-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-left: 2px;
+}
+
+.project-label {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #111;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.project-title-text {
+    font-family: var(--font-sans) !important;
+    font-size: 0.95rem !important;
+    font-weight: 400 !important;
+    color: #111 !important;
+    opacity: 0.7;
+    margin: 0 !important;
+}
+
+
+.projects-footer {
+    display: flex;
+    justify-content: flex-end; /* Align button to the right as per screenshot */
+    margin-top: 40px;
+}
+
+.btn-pill {
+    display: inline-block;
+    padding: 0.8rem 2.3rem; /* Yahan se size adjust hota hai (Top/Bottom, Left/Right) */
+    background-color: #1A1A1A;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 60px;
+    font-family: var(--font-sans); /* Fixed from --font-Montserrat */
+    font-size: 1rem; /* Yahan se font aur overall button size control hota hai */
+    font-weight: 500;
+    border: 1px solid #1A1A1A;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+}
+
+
+.btn-pill:hover {
+    background-color: #EDEDED; /* Background color on hover */
+    color: #1A1A1A; /* Dark text on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .projects-header-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    
+    .projects-header-right {
+        text-align: left;
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .home-projects {
+        padding: 60px 5%;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-image-wrapper {
+        border-radius: 30px;
+        aspect-ratio: 1/1;
+    }
+}
+

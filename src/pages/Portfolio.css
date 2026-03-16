@@ -1,0 +1,126 @@
+/* Portfolio Projects Page */
+.portfolio-section {
+    background-color: #EDEDED;
+    color: #000000 !important;
+    padding: 12rem 5% 8rem;
+    min-height: 100vh;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.portfolio-section .portfolio-title {
+    font-family: var(--font-sans) !important;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    text-align: left;
+    color: #000000 !important; /* ULTRA BLACK */
+    font-weight: 900 !important; /* Extra bold */
+    margin-bottom: 5rem;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    max-width: 900px;
+    line-height: 1;
+    opacity: 0;
+    animation: slideUp 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+
+.portfolio-section .project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6rem 3rem;
+    width: 100%;
+}
+
+.portfolio-section .project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    cursor: pointer;
+    text-decoration: none !important;
+    color: #000000 !important; /* FORCED PURE BLACK FOR ALL STATES */
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 1.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+
+.portfolio-section .project-card.is-visible {
+    opacity: 1 !important;
+    transform: translateY(0);
+}
+
+.portfolio-section .project-image-wrapper {
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    border-radius: 50px;
+    background-color: #d0d0d0;
+}
+
+.portfolio-section .project-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.5s cubic-bezier(0.2, 1, 0.2, 1);
+}
+
+.portfolio-section .project-card:hover .project-image-wrapper img {
+    transform: scale(1.06);
+}
+
+.portfolio-section .project-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-left: 2px; 
+}
+
+.portfolio-section .project-title-text {
+    font-family: var(--font-sans) !important;
+    font-size: 1rem !important; /* Slightly bigger for more "black" presence */
+    font-weight: 600 !important;
+    color: #020202 !important; /* ULTRA BLACK */
+    margin: 0 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 1 !important;
+}
+
+.portfolio-section .project-desc {
+    font-family: var(--font-sans) !important;
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+    color: #000000 !important;
+    opacity: 0.6 !important; /* Desc stays a bit subtle */
+    margin: 0 !important;
+    max-width: 90%;
+}
+
+@media (max-width: 992px) {
+    .portfolio-section .project-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-section {
+        padding-top: 10rem;
+    }
+    
+    .portfolio-section .portfolio-title {
+        font-size: 2.2rem;
+    }
+}
+

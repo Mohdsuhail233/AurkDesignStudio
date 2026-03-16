@@ -1,0 +1,191 @@
+/* Services Section */
+.services {
+    background-color: #111111;
+    /* Pitch dark background as per image */
+    color: #ffffff;
+    padding: 6rem 5% 8rem;
+    font-family: var(--font-sans);
+}
+
+.services-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.services-header {
+    margin-bottom: 3.5rem;
+    
+    /* Reveal effect initial state */
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 1.8s cubic-bezier(0.19, 1, 0.22, 1), 
+                transform 1.8s cubic-bezier(0.19, 1, 0.22, 1);
+    will-change: transform, opacity;
+}
+
+.services-header.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.services-title {
+    font-family: var(--font-sans);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: #ffffff;
+}
+
+.services-subtitle {
+    font-size: 1rem;
+    opacity: 0.7;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+}
+
+.services-list {
+    position: relative;
+    overflow: hidden; /* Key to hide the line before it swipes in */
+}
+
+.services-list::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateX(-100%);
+    transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+    will-change: transform;
+    z-index: 2;
+}
+
+.services-list.is-visible::before {
+    transform: translateX(0);
+}
+
+.service-item {
+    display: grid;
+    grid-template-columns: 1.2fr 2fr 0.8fr;
+    gap: 2rem;
+    padding: 3rem 0;
+    position: relative;
+    overflow: hidden; /* Clip the bottom line swipe */
+    align-items: flex-start;
+    transition: background-color 0.4s ease, 
+                opacity 1.2s cubic-bezier(0.19, 1, 0.22, 1), 
+                transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+    transition-delay: 0s, var(--delay), var(--delay);
+    
+    /* Reveal effect initial state */
+    opacity: 0;
+    transform: translateY(30px);
+    will-change: transform, opacity;
+}
+
+
+.service-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateX(-100%);
+    transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+    transition-delay: var(--delay);
+    will-change: transform;
+    z-index: 2;
+}
+
+.service-item.is-visible::after {
+    transform: translateX(0);
+}
+
+.service-item:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+
+.service-info-col .service-name {
+    font-family: var(--font-sans);
+    font-size: 1.75rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.service-info-col .service-tagline {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.6;
+}
+
+.service-desc-col p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.75;
+    max-width: 600px;
+}
+
+.service-icon-col {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.service-icon {
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+
+.service-item:hover .service-icon {
+    opacity: 0.8;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .service-item {
+        grid-template-columns: 1fr 1.5fr;
+    }
+
+    .service-icon-col {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .services {
+        padding: 4rem 1.5rem;
+    }
+
+    .services-title {
+        font-size: 2.5rem;
+    }
+
+    .service-item {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        padding: 2rem 0;
+    }
+
+    .service-info-col .service-name {
+        font-size: 1.5rem;
+    }
+
+    .service-desc-col p {
+        font-size: 0.9rem;
+    }
+}
