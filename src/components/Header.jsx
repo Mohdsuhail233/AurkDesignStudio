@@ -19,8 +19,8 @@ export default function Header() {
 
     return (
         <header className={`header ${isMenuOpen ? 'menu-open' : ''}`}>
-            <Link 
-                to="/" 
+            <Link
+                to="/"
                 className="logo-link"
                 onClick={() => {
                     closeMenu();
@@ -48,7 +48,7 @@ export default function Header() {
             {/* Mobile Menu Overlay */}
             <div className={`mobile-menu ${isMenuOpen ? 'is-active' : ''}`}>
                 <nav className="mobile-nav-links">
-                    <Link to="/" className="mobile-nav-item" onClick={() => { closeMenu(); window.scrollTo(0,0); }}>
+                    <Link to="/" className="mobile-nav-item" onClick={() => { closeMenu(); window.scrollTo(0, 0); }}>
                         Home <span>01</span>
                     </Link>
                     <Link to="/about" className="mobile-nav-item" onClick={closeMenu}>
@@ -64,7 +64,7 @@ export default function Header() {
                         Contact <span>05</span>
                     </a>
                 </nav>
-                
+
                 <div className="mobile-menu-footer">
                     <p>aurkdesignstudio@gmail.com</p>
                     <div className="mobile-socials">

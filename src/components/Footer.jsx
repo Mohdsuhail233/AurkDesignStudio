@@ -9,10 +9,10 @@ export default function Footer() {
             <div className="footer-top-section">
                 <div className="footer-philosophy">
                     <p>
-                        At AURK, we excel in creating extraordinary spaces tailored to your unique needs. 
-                        Leveraging our international design experience and a highly skilled team, 
-                        we offer designing consultancy and seamless turnkey solutions that ensure 
-                        exceptional quality and efficiency. From concept to reality, we craft your 
+                        At AURK, we excel in creating extraordinary spaces tailored to your unique needs.
+                        Leveraging our international design experience and a highly skilled team,
+                        we offer designing consultancy and seamless turnkey solutions that ensure
+                        exceptional quality and efficiency. From concept to reality, we craft your
                         dream space with innovation, precision, and unparalleled craftsmanship.
                     </p>
                     <div className="footer-socials">
