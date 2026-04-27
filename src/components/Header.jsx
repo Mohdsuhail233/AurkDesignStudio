@@ -1,19 +1,28 @@
 import React, { useState } from 'react';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import './Header.css';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
     const closeMenu = () => setIsMenuOpen(false);
 
     const handleScrollLink = (e, id) => {
+        e.preventDefault();
         closeMenu();
-        if (window.location.pathname === '/') {
-            e.preventDefault();
+        if (location.pathname === '/') {
+            // Already on home, just scroll
             document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            // Navigate to home first, then scroll after page renders
+            navigate('/');
+            setTimeout(() => {
+                document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+            }, 300);
         }
     };
 
@@ -24,7 +33,6 @@ export default function Header() {
                 className="logo-link"
                 onClick={() => {
                     closeMenu();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
             >
                 <div className="logo">
@@ -68,8 +76,8 @@ export default function Header() {
                 <div className="mobile-menu-footer">
                     <p>aurkdesignstudio@gmail.com</p>
                     <div className="mobile-socials">
-                        <a href="https://www.instagram.com/AurkDesignStudio">Instagram</a>
-                        <a href="https://www.linkedin.com/company/aurkdesignstudio/">LinkedIn</a>
+                        <a href="https://www.instagram.com/AurkDesignStudio" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href="https://www.linkedin.com/company/aurkdesignstudio/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                     </div>
                 </div>
             </div>

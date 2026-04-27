@@ -12,9 +12,9 @@ const ProjectCard = ({ proj, idx }) => {
     });
 
     return (
-        <Link 
+        <Link
             ref={ref}
-            to={`/portfolio/${idx}`} 
+            to={`/portfolio/${idx}`}
             className={`project-card ${inView ? 'is-visible' : ''}`}
             style={{ transitionDelay: `${idx * 0.1}s` }}
         >
@@ -37,7 +37,7 @@ export default function Projects() {
 
     return (
         <section className="home-projects" id="portfolio">
-            <div 
+            <div
                 ref={headerRef}
                 className={`projects-header-wrapper ${headerInView ? 'is-visible' : ''}`}
             >
@@ -49,7 +49,7 @@ export default function Projects() {
                     <p>We take pride in our diverse portfolio, showcasing a range of unique and sophisticated interiors. Each project reflects our commitment to creativity, quality, and client satisfaction.</p>
                 </div>
             </div>
-            
+
             <div className="project-grid">
                 {projectList.slice(0, 3).map((proj, idx) => (
                     <ProjectCard key={idx} proj={proj} idx={idx} />

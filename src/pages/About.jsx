@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useInView } from 'react-intersection-observer';
 import './About.css';
 
@@ -23,6 +24,16 @@ export default function About() {
 
     return (
         <div className="about-page">
+            <Helmet>
+                <title>About Us | Aurk Design Studio — Our Story, Mission & Team</title>
+                <meta name="description" content="Meet the team behind Aurk Design Studio. Founded by Mohammad Afzal, a Civil Engineer and interior designer specializing in luxury residences and retail showrooms. Discover our philosophy and mission." />
+                <link rel="canonical" href="https://aurkdesignstudio.vercel.app/about" />
+                <meta property="og:title" content="About Us | Aurk Design Studio" />
+                <meta property="og:description" content="Meet the team behind Aurk Design Studio. Passionate architects, dynamic interior designers, and visionary planners creating luxury spaces." />
+                <meta property="og:url" content="https://aurkdesignstudio.vercel.app/about" />
+                <meta property="og:type" content="website" />
+            </Helmet>
+
             <section className="about-hero">
                 <FadeInBlock>
                     <h1 className="about-title">About Us</h1>
@@ -43,7 +54,7 @@ export default function About() {
                     </p>
                 </FadeInBlock>
                 <FadeInBlock delay={0.3} className="about-block-image scale-reveal">
-                    <img src="/images/house.jpg" alt="Who we are" />
+                    <img src="/images/house.jpg" alt="Aurk Design Studio luxury residential architecture and exterior design" loading="lazy" width="600" height="400" />
                 </FadeInBlock>
             </section>
 
@@ -58,7 +69,7 @@ export default function About() {
                     </p>
                 </FadeInBlock>
                 <FadeInBlock delay={0.3} className="about-block-image scale-reveal">
-                    <img src="/images/kitchen.webp" alt="Company Mission" />
+                    <img src="/images/kitchen.webp" alt="Modern sustainable kitchen interior design by Aurk Design Studio" loading="lazy" width="600" height="400" />
                 </FadeInBlock>
             </section>
 
@@ -74,7 +85,7 @@ export default function About() {
                 </FadeInBlock>
 
                 <FadeInBlock delay={0.3} className="about-block-image scale-reveal founder-image-block">
-                    <img src="/images/founder.PNG" alt="Mohammad Afzal" />
+                    <img src="/images/founder.PNG" alt="Mohammad Afzal — Founder of Aurk Design Studio, Civil Engineer and Interior Designer" loading="lazy" width="400" height="500" />
                 </FadeInBlock>
             </section>
         </div>

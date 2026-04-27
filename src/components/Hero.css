@@ -1,7 +1,8 @@
 .hero {
     position: relative;
     height: 100vh;
-    height: 100dvh; /* Better for mobile to prevent bottom cut-off */
+    height: 100dvh;
+    /* Better for mobile to prevent bottom cut-off */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,7 +21,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 65%; /* Balanced: mostly centered but showing enough bottom */
+    object-position: center 65%;
+    /* Balanced: mostly centered but showing enough bottom */
     transform: scale(1.02);
     animation: scaleDown 10s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
@@ -29,6 +31,7 @@
     from {
         transform: scale(1.02);
     }
+
     to {
         transform: scale(1);
     }
@@ -172,7 +175,8 @@
 }
 
 .stat-divider {
-    width: 40px; /* Made the divider shorter too */
+    width: 40px;
+    /* Made the divider shorter too */
     height: 1.5px;
     background: rgba(255, 255, 255, 0.3);
     margin-bottom: 0.8rem;
@@ -192,7 +196,7 @@
     .hero h1 {
         font-size: 4rem;
     }
-    
+
     .hero-stats {
         flex-wrap: wrap;
         justify-content: center;
@@ -233,4 +237,4 @@
         right: 2rem;
         bottom: 2rem;
     }
-}
+}

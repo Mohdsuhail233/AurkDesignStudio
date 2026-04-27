@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import './FAQ.css';
 
 const FAQItem = ({ question, answer }) => {
@@ -6,9 +7,9 @@ const FAQItem = ({ question, answer }) => {
 
     return (
         <div className={`faq-item ${isOpen ? 'active' : ''}`}>
-            <div className="faq-question" onClick={() => setIsOpen(!isOpen)}>
+            <div className="faq-question" onClick={() => setIsOpen(!isOpen)} role="button" tabIndex={0} aria-expanded={isOpen} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setIsOpen(!isOpen); } }}>
                 <h3>{question}</h3>
-                <span className="faq-icon">{isOpen ? '−' : '+'}</span>
+                <span className="faq-icon" aria-hidden="true">{isOpen ? '−' : '+'}</span>
             </div>
             <div className="faq-answer">
                 <p>{answer}</p>
@@ -37,14 +38,33 @@ export default function FAQ() {
         }
     ];
 
+    // Generate FAQPage JSON-LD structured data
+    const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+            }
+        }))
+    };
+
     return (
         <section className="faq-section" id="faq">
+            <Helmet>
+                <script type="application/ld+json">
+                    {JSON.stringify(faqSchema)}
+                </script>
+            </Helmet>
             <div className="faq-container">
                 <div className="faq-header">
                     <h2>FREQUENTLY ASKED<br />QUESTIONS</h2>
                     <p>Everything you need to know about our process and services.</p>
                 </div>
-                <div className="faq-list">
+                <div className="faq-list" role="list">
                     {faqs.map((faq, idx) => (
                         <FAQItem key={idx} question={faq.question} answer={faq.answer} />
                     ))}

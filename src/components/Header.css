@@ -29,9 +29,12 @@
 .logo-link {
     text-decoration: none;
     color: inherit;
-    z-index: 2001;
-    /* High enough to stay above everything */
+    position: relative;
     transition: opacity 0.3s ease;
+}
+
+.header.menu-open .logo-link {
+    z-index: 2001;
 }
 
 .logo {
@@ -41,7 +44,7 @@
 }
 
 .header-logo-img {
-    height: 110px;
+    height: 90px;
     width: auto;
     display: block;
     filter: brightness(0);
@@ -53,6 +56,8 @@
     display: flex;
     gap: 2rem;
     align-items: center;
+    position: relative;
+    z-index: 10;
 }
 
 .nav-item {
@@ -241,7 +246,7 @@
     }
 
     .header-logo-img {
-        height: 100px;
+        height: 90px;
         /* User's preferred mobile size */
         max-width: none;
         /* Allow it to grow beyond global img limits */

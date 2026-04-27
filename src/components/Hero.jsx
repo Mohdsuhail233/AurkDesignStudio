@@ -43,10 +43,10 @@ export default function Hero() {
                         {heroData.stats.map((stat, idx) => (
                             <div key={idx} className="stat-card">
                                 <span className="stat-number">
-                                    <CountUp 
-                                        end={stat.value} 
-                                        suffix={stat.suffix} 
-                                        duration={Math.min(1000 + stat.value * 20, 1500)} 
+                                    <CountUp
+                                        end={stat.value}
+                                        suffix={stat.suffix}
+                                        duration={Math.min(1000 + stat.value * 20, 1500)}
                                     />
                                 </span>
                                 <div className="stat-divider"></div>

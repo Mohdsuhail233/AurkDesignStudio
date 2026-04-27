@@ -1,16 +1,22 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import Lenis from 'lenis';
 
 export default function SmoothScroll({ children }) {
+    const lenisRef = useRef(null);
+    const location = useLocation();
+
     useEffect(() => {
         const lenis = new Lenis({
-            lerp: 0.1, // Smoothness intensity
-            duration: 1.5, // How long the scroll lasts
+            lerp: 0.1,
+            duration: 1.5,
             smoothWheel: true,
             wheelMultiplier: 1.1,
             touchMultiplier: 2,
             infinite: false,
         });
+
+        lenisRef.current = lenis;
 
         function raf(time) {
             lenis.raf(time);
@@ -23,6 +29,14 @@ export default function SmoothScroll({ children }) {
             lenis.destroy();
         };
     }, []);
+
+    // Scroll to top on route change
+    useEffect(() => {
+        if (lenisRef.current) {
+            lenisRef.current.scrollTo(0, { immediate: true });
+        }
+        window.scrollTo(0, 0);
+    }, [location.pathname]);
 
     return <>{children}</>;
 }

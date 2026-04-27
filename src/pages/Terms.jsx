@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import './Terms.css';
 
 export default function Terms() {
@@ -8,8 +9,15 @@ export default function Terms() {
 
     return (
         <div className="terms-page">
+            <Helmet>
+                <title>Terms & Conditions | Aurk Design Studio</title>
+                <meta name="description" content="Read the terms and conditions for using Aurk Design Studio's website and services. Learn about intellectual property, use of services, and limitation of liability." />
+                <link rel="canonical" href="https://aurkdesignstudio.vercel.app/terms" />
+                <meta name="robots" content="noindex, follow" />
+            </Helmet>
+
             <header className="terms-header">
-                <h1>Terms & Condition</h1>
+                <h1>Terms & Conditions</h1>
                 <p>Last updated: {new Date().toLocaleDateString()}</p>
             </header>
 
@@ -21,7 +29,7 @@ export default function Terms() {
 
                 <section>
                     <h2>2. Intellectual Property</h2>
-                    <p>All content, including designs, images, and text, is the property ofAURK DESIGN STUDIO and may not be copied, modified, or distributed without permission.</p>
+                    <p>All content, including designs, images, and text, is the property of AURK DESIGN STUDIO and may not be copied, modified, or distributed without permission.</p>
                 </section>
 
                 <section>

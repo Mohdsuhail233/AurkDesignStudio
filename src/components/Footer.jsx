@@ -16,8 +16,8 @@ export default function Footer() {
                         dream space with innovation, precision, and unparalleled craftsmanship.
                     </p>
                     <div className="footer-socials">
-                        <a href="https://www.linkedin.com/company/aurkdesignstudio/" aria-label="LinkedIn"><Linkedin size={18} /></a>
-                        <a href="https://www.instagram.com/AurkDesignStudio" aria-label="Instagram"><Instagram size={18} /></a>
+                        <a href="https://www.linkedin.com/company/aurkdesignstudio/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><Linkedin size={18} /></a>
+                        <a href="https://www.instagram.com/AurkDesignStudio" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><Instagram size={18} /></a>
                     </div>
                 </div>
 
@@ -51,7 +51,7 @@ export default function Footer() {
                     </div>
                     <div className="footer-legal">
                         <a href="#">Privacy Policy <ArrowUpRight size={12} /></a>
-                        <Link to="/terms">Terms and Condition <ArrowUpRight size={12} /></Link>
+                        <Link to="/terms">Terms and Conditions <ArrowUpRight size={12} /></Link>
                     </div>
                 </div>
 

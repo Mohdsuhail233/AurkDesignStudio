@@ -47,7 +47,7 @@ export default function Showcase() {
                                 <p>{item.desc}</p>
                             </div>
                         ) : (
-                            <img src={item.img} alt={item.alt} />
+                            <img src={item.img} alt={item.alt} loading="lazy" width="400" height="300" />
                         )}
                     </BentoItem>
                 ))}
