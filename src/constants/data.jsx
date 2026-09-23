@@ -68,7 +68,7 @@ export const servicesData = [
 export const projectList = [
     {
         title: "Office",
-        img: "/images/office2.jpeg",
+        img: "/images/Office4.jpeg",
         description: "A comprehensive look into our design philosophy and execution for this space. We focused on blending functionality with aesthetic appeal, resulting in a harmonious environment that speaks volumes.",
         images: [
             "/images/office2.jpeg",
@@ -119,7 +119,7 @@ export const projectList = [
     },
     {
         title: "Modular kitchen",
-        img: "/images/kitchen.jpeg",
+        img: "/images/kitchen4.jpeg",
         description: "A warm and inviting kitchen space that combines traditional farmhouse elements with modern culinary requirements.",
         images: [
             "/images/kitchen.jpeg",
@@ -187,7 +187,7 @@ export const showcaseData = [
 ];
 
 export const introData = {
-    image: "/images/house2.jpg", // User can change this to their image
+    image: "/images/elevation.jpeg", // User can change this to their image
     title: "About Us",
     description: "At Aurk Design Studio, we believe that design is not just about making things look good, but about creating spaces that resonate with the soul. We are a collective of passionate architects, dynamic interior designers, and visionary planners."
 };

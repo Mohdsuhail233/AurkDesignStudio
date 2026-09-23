@@ -34,7 +34,7 @@ export default function Footer() {
             </div>
 
             <div className="footer-main-logo">
-                <img src="/images/AurkLogo.png" alt="Aurk Design Studio" className="footer-logo-img" />
+                <img src="/images/NewLogo.png" alt="Aurk Design Studio" className="footer-logo-img" />
             </div>
 
             <div className="footer-bottom-row">
