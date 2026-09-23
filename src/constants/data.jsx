@@ -86,8 +86,8 @@ export const projectList = [
             "/images/Bedroom.jpeg",
             "/images/Bedroom2.jpeg",
             "/images/Bedroom3.jpeg",
-            "/images/masterbedroom.jpeg",
-            "/images/Room.jpeg"
+            "/images/masterbedroom.jpeg"
+            
         ]
     },
     {
@@ -101,6 +101,9 @@ export const projectList = [
             "/images/LivingRoom4.jpeg",
             "/images/LivingRoom5.jpeg",
             "/images/LivingRoom6.jpeg",
+            "/images/Room.jpeg",
+            "/images/LivingDining.jpeg",
+            "/images/LivingDining1.jpeg"
 
         ]
     },

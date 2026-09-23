@@ -85,19 +85,25 @@
 /* Giant Signature Logo */
 .footer-main-logo {
     text-align: center;
-    padding: 4rem 0;
+    padding: 2.5rem 0;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .footer-logo-img {
-    height: clamp(150px, 25vw, 450px);
+    height: clamp(220px, 38vw, 640px);
+    max-width: 100%;
     width: auto;
     margin: 0 auto;
     display: block;
     /* Force logo to be pure white regardless of source image color */
     filter: brightness(0) invert(1);
-    opacity: 0.9;
+    opacity: 0.95;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.footer-logo-img:hover {
+    opacity: 1;
 }
 
 .logo-location {
