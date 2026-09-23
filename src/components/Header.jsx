@@ -36,7 +36,7 @@ export default function Header() {
                 }}
             >
                 <div className="logo">
-                    <img src="/images/AurkLogo.png" alt="Aurk Design Studio" className="header-logo-img" />
+                    <img src="/images/NewLogo.png" alt="Aurk Design Studio" className="header-logo-img" />
                 </div>
             </Link>
 

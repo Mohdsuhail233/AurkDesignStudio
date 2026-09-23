@@ -72,7 +72,10 @@ export const projectList = [
         description: "A comprehensive look into our design philosophy and execution for this space. We focused on blending functionality with aesthetic appeal, resulting in a harmonious environment that speaks volumes.",
         images: [
             "/images/office2.jpeg",
-            "/images/office.jpeg"
+            "/images/office.jpeg",
+            "/images/office3.jpeg",
+            "/images/Office4.jpeg"
+
         ]
     },
     {
@@ -83,7 +86,8 @@ export const projectList = [
             "/images/Bedroom.jpeg",
             "/images/Bedroom2.jpeg",
             "/images/Bedroom3.jpeg",
-            "/images/masterbedroom.jpeg"
+            "/images/masterbedroom.jpeg",
+            "/images/Room.jpeg"
         ]
     },
     {
@@ -92,7 +96,12 @@ export const projectList = [
         description: "A vibrant and eclectic space designed to inspire, featuring custom-built storage for art supplies and a flexible layout for both work and rest.",
         images: [
             "/images/LivingRoom.jpeg",
-            "/images/LivingRoom2.jpeg"
+            "/images/LivingRoom2.jpeg",
+            "/images/LivingRoom3.jpeg",
+            "/images/LivingRoom4.jpeg",
+            "/images/LivingRoom5.jpeg",
+            "/images/LivingRoom6.jpeg",
+
         ]
     },
     {
@@ -101,7 +110,11 @@ export const projectList = [
         description: "Minimalist design meeting functionality in a compact urban setting. This project showcases our ability to maximize space without compromising on style.",
         images: [
             "/images/showroom.jpeg",
-            "/images/showroom2.jpeg"
+            "/images/showroom2.jpeg",
+            "/images/jewellery.jpeg",
+            "/images/jewellery2.jpeg",
+            "/images/jewellery3.jpeg",
+
         ]
     },
     {
@@ -110,7 +123,9 @@ export const projectList = [
         description: "A warm and inviting kitchen space that combines traditional farmhouse elements with modern culinary requirements.",
         images: [
             "/images/kitchen.jpeg",
-            "/images/kitchen2.jpeg"
+            "/images/kitchen2.jpeg",
+            "/images/kitchen3.jpeg",
+            "/images/kitchen4.jpeg",
         ]
     },
     {
@@ -120,7 +135,7 @@ export const projectList = [
         images: [
             "/images/saloon.jpeg",
             "/images/saloon1.jpeg",
-           
+
         ]
     }
 ];
